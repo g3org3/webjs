@@ -23,7 +23,25 @@ $ npm start
  */
 module.exports {
   // Examples
-  '/': 'MainController.getInfo',
-  'POST /user': 'UserController.create'
+  '/': 'SampleController.getInfo',
+  'POST /user': 'UserController.create',
+  // you may also render a view like this
+  '/home': 'home'
+}
+```
+
+### Controllers &nbsp;
+```javascript
+/*
+ * SampleController
+ */
+module.exports {
+  //action
+  getInfo: function(req, res){
+    res.send("ready");
+  },
+  main: function(req, res){
+    res.render("home");
+  }
 }
 ```
