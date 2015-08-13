@@ -16,3 +16,14 @@ $ cd MyApp && npm install
 # Start
 $ npm start
 ```
+### Routes &nbsp;
+```javascript
+/*
+ * Routes Config
+ */
+module.exports {
+  // Examples
+  '/': 'MainController.getInfo',
+  'POST /user': 'UserController.create'
+}
+```
