@@ -4,6 +4,8 @@
  * Module dependencies.
  */
 
+var start = new Date().getTime();
+
 var app     = require('../app');
 var debug   = require('debug')('webjs:server');
 var http    = require('http');
@@ -21,6 +23,12 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+
+/**
+ *  Socket.io
+ */
+var io = require('socket.io')(server);
+io.on('connection', require('../core/sockets'));
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -89,3 +97,7 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+
+var end = new Date().getTime();
+console.log("----> "+(end-start) +"ms");
