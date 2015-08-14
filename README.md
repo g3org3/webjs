@@ -16,6 +16,19 @@ $ cd MyApp && npm install
 # Start
 $ npm start
 ```
+
+### Features &nbsp;
+Call any service from any controller!
+```javascript
+// No need to require your service! :O
+var fn = require('../services/myService.js'); // [ X ]
+fn.findInArray(users, "id", 1);
+
+// Simply use them in your controllers by the service name B|
+myService.findInArray(users, "id", 1); // [ √ ]
+
+```
+
 ### Routes &nbsp;
 ```javascript
 /*
@@ -38,10 +51,23 @@ module.exports {
 module.exports {
   //action
   getInfo: function(req, res){
+    SampleService.findInArray(req.param.users, "id", "72A4FC83EF812BA1");
     res.send("ready");
   },
   main: function(req, res){
     res.render("home");
+  }
+}
+```
+### Services &nbsp;
+```javascript
+/*
+ * SampleService
+ */
+module.exports {
+  //action
+  findInArray: function(array, key, value){
+    ...
   }
 }
 ```
