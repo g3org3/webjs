@@ -1,20 +1,13 @@
-# webjs [![version](http://g3org3.github.io/webjs/version.svg)]()
-A tiny web framework on top of expressjs
+# webjs [![npm version](https://badge.fury.io/js/webjs-cli.svg)](http://badge.fury.io/js/webjs-cli)
 
-### Installation &nbsp;
+### Installation
 ```sh
-# Clone the repo
-$ git clone https://github.com/g3org3/webjs.git MyApp
+$ [sudo] npm install -g webjs-cli
 ```
 
+### Create a new app
 ```sh
-# Install dependencies
-$ cd MyApp && npm install
-```
-
-```sh
-# Start
-$ npm start
+$ webjs new my_app
 ```
 
 ### Features &nbsp;
